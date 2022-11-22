@@ -18,8 +18,13 @@ public class titleMenu : MonoBehaviour
         //levelSelectButton.onClick.AddListener(goToLevelSelectMenu);
     }
 
+    private void Update()
+    {
+
+    }
+
     public void startStage1()
     {
-        SceneManager.LoadScene("level1");
+        SceneManager.LoadScene("stage1");
     }
 }

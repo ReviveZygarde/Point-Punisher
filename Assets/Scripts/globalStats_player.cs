@@ -26,6 +26,11 @@ public class globalStats_player : Singleton<globalStats_player>
     public int Lives = 5;
     public int HP = 100;
 
+    /// <summary>
+    /// Sound effect related.
+    /// </summary>
+    public soundManager SoundEffectStuff;
+
 
     /// <summary>
     /// Used for the event system during gameplay.
@@ -33,6 +38,7 @@ public class globalStats_player : Singleton<globalStats_player>
     /// ADD_LIFE = Player picked up an item that increases a Life.
     /// PLAYER_DEAD = Player died and lost a life. If the player has 0 lives left -> send to Game Over scene.
     /// LEVEL_COMPLETED = Completed a level.
+    /// LOW_HP = Low HP. If the HP is under 25.
     /// Depending on gameMode state, switch to their respective scene
     /// (NORMAL/GAMER -> to the next level, or FREE PLAY -> lvl select scene.)
     /// </summary>
@@ -53,6 +59,10 @@ public class globalStats_player : Singleton<globalStats_player>
         pointsNumber.text = $"{Points}";
         livesNumber.text = $"{Lives}";
         currentHP.text = $"{HP}";
+        if(HP <= 30)
+        {
+            SoundEffectStuff.lowHPalarmPlayback();
+        }
     }
 
     void restartStageAfterDeath() //After the player's HP reaches 0, restart scene and bring the HP back up to 100.

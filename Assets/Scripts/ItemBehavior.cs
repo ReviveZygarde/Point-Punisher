@@ -10,6 +10,7 @@ public class ItemBehavior : MonoBehaviour
     public List<Transform> Locations;
     private int _locationIndex = 0;
     private NavMeshAgent _agent;
+    private soundManager sound;
 
     /// <summary>
     /// This is to give the star an AI so it can move similarly to the Enemies. Give the star a "patrol" route, and it will follow that route.
@@ -20,6 +21,7 @@ public class ItemBehavior : MonoBehaviour
     void Start()
     {
         _agent = GetComponent<NavMeshAgent>();
+        sound = GetComponent<soundManager>();
         InitializePatrolRoute();
         MoveToNextPatrolLocation();
     }
@@ -59,8 +61,9 @@ public class ItemBehavior : MonoBehaviour
             playerStats.Points = playerStats.Points * 5;
             if (playerStats.HP < 100)
             {
-                playerStats.HP++;
+                playerStats.HP = playerStats.HP + 5;
             }
+            sound.starSoundEffect();
             Destroy(this.transform.gameObject);
             Debug.Log("Booster Item collected!");
         }

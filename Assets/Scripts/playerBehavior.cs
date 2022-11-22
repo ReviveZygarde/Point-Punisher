@@ -9,6 +9,7 @@ public class playerBehavior : MonoBehaviour
     private float _hInput;
     private Rigidbody _rb;
     private CapsuleCollider _col;
+    private soundManager soundPlaybackCuesheet;
     public GameObject Bullet;
     public float BulletSpeed = 100f;
     private bool _isShooting;
@@ -18,6 +19,7 @@ public class playerBehavior : MonoBehaviour
     {
         _rb = GetComponent<Rigidbody>();
         _col = GetComponent<CapsuleCollider>();
+        soundPlaybackCuesheet = GetComponent<soundManager>();
     }
 
     // Update is called once per frame
@@ -29,6 +31,7 @@ public class playerBehavior : MonoBehaviour
         if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonUp(0) || Input.GetKeyDown("joystick button 2") || Input.GetKeyUp("joystick button 2"))
         {
             ShootBullet();
+            soundPlaybackCuesheet.shootSoundPlayback();
         };
     }
 
