@@ -35,7 +35,12 @@ public class leaderSubjectScript : Subject
     
     private void OnEnable()
     {
-            followerCapsulesArray = GameObject.FindGameObjectsWithTag(enemyGroupTag); //Find capsules that are in the scene already.
+        enableAction();
+    }
+
+    private void enableAction()
+    {
+        followerCapsulesArray = GameObject.FindGameObjectsWithTag(enemyGroupTag); //Find capsules that are in the scene already.
         foreach (GameObject capsule in followerCapsulesArray) //Adds a Follower to the Enemies it found. Loops until its done with all the drones.
         {
             Follower followerScript = capsule.AddComponent<Follower>();
@@ -43,10 +48,28 @@ public class leaderSubjectScript : Subject
         }
     }
 
+    /*
+    public void removeFollowers()
+    {
+        Debug.Log("CHANGE SUBJECT!!!!");
+        disableAction();
+    }
+    */
+
+    public void addFollowers()
+    {
+        //addFollowers();
+    }
+
 
     
 
     private void OnDisable()
+    {
+        disableAction();
+    }
+
+    private void disableAction()
     {
         foreach (GameObject capsule in followerCapsulesArray)
         {
@@ -54,5 +77,4 @@ public class leaderSubjectScript : Subject
             Detach(followerScript);
         }
     }
-
 }

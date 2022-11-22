@@ -13,6 +13,8 @@ public class EnemyBehavior : MonoBehaviour
     //public GameBehavior gameManager;
     public globalStats_player playerStats;
     private int _lives = 1;
+    //public GameObject nextEnemy;
+    //private leaderSubjectScript something;
 
 void Start()
     {
@@ -21,6 +23,8 @@ void Start()
         MoveToNextPatrolLocation();
         Player = GameObject.Find("Player").transform;
         //gameManager = GameObject.Find("Game_Manager").GetComponent<GameBehavior>();
+        //--------------------
+        //something = GetComponent<leaderSubjectScript>();
     }
 
     public int EnemyLives
@@ -41,23 +45,32 @@ void Start()
 
     void FakeDestroy() //This destroys certain components of the enemy, but doesn't destroy it entirely.
     {
-        Destroy(GetComponent<CapsuleCollider>());
-        Destroy(GetComponent<MeshRenderer>());
+        GetComponent<MeshRenderer>().enabled = false;
+        GetComponent<CapsuleCollider>().enabled = false;
+        //Destroy(GetComponent<CapsuleCollider>());
+        //Destroy(GetComponent<MeshRenderer>());
+        //something.removeFollowers();
     }
 
     void InitializePatrolRoute()
     {
-        foreach (Transform child in PatrolRoute)
+        if(PatrolRoute != null)
         {
-            Locations.Add(child);
+            foreach (Transform child in PatrolRoute)
+            {
+                Locations.Add(child);
+            }
         }
     }
 
     private void Update()
     {
-        if (_agent.remainingDistance < 0.2f && !_agent.pathPending)
+        if (GetComponent<NavMeshAgent>().enabled)
         {
-            MoveToNextPatrolLocation();
+            if (_agent.remainingDistance < 0.2f && !_agent.pathPending)
+            {
+                MoveToNextPatrolLocation();
+            }
         }
     }
 
@@ -100,7 +113,6 @@ void Start()
         if (collision.gameObject.name == "Player")
         {
             playerStats.HP -= 10;
-            //gameManager.HealthText.text = $"Player Health: {gameManager._playerHP}";
             Debug.Log("Critical hit");
         }
     }
