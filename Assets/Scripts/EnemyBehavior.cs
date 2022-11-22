@@ -9,9 +9,9 @@ public class EnemyBehavior : MonoBehaviour
     public List<Transform> Locations;
     private int _locationIndex = 0;
     private NavMeshAgent _agent;
-    public Transform Player;
     //public GameBehavior gameManager;
-    public globalStats_player playerStats;
+    private globalStats_player playerStats;
+    private globalStats_mode mode;
     private int _lives = 1;
     //public GameObject nextEnemy;
     //private leaderSubjectScript something;
@@ -21,11 +21,22 @@ void Start()
         _agent = GetComponent<NavMeshAgent>();
         InitializePatrolRoute();
         MoveToNextPatrolLocation();
-        Player = GameObject.Find("Player").transform;
+        retreievePlayerStatSingleton();
         //gameManager = GameObject.Find("Game_Manager").GetComponent<GameBehavior>();
         //--------------------
         //something = GetComponent<leaderSubjectScript>();
     }
+
+    private void retreievePlayerStatSingleton() //Since enemies and items will communicate with the Singleton, they derp out and dont change values in the singleton if
+                                                //they obviously can't find it. So, instead of me making the enemies/items define what the singleton is in my inspector
+                                                //They'll just find out what the singleton is by looking for the game object called "common".
+    {
+        GameObject common = GameObject.Find("common");
+        GameObject gameMode = GameObject.Find("!!!GAME_MODE_SELECTION");
+        playerStats = common.GetComponent<globalStats_player>();
+        mode = gameMode.GetComponent<globalStats_mode>();
+    }
+
 
     public int EnemyLives
     {

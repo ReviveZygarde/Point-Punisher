@@ -9,6 +9,7 @@ TagManager:
   - Ground
   - ene_gr1
   - ene_gr2
+  - globalPlayerStats
   layers:
   - Default
   - TransparentFX

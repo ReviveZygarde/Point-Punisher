@@ -5,7 +5,8 @@ using UnityEngine.AI;
 
 public class ItemBehavior : MonoBehaviour
 {
-    public globalStats_player playerStats;
+    private globalStats_player playerStats;
+    private globalStats_mode mode;
     public Transform PatrolRoute;
     public List<Transform> Locations;
     private int _locationIndex = 0;
@@ -24,6 +25,15 @@ public class ItemBehavior : MonoBehaviour
         sound = GetComponent<soundManager>();
         InitializePatrolRoute();
         MoveToNextPatrolLocation();
+        retreievePlayerStatSingleton();
+    }
+
+    private void retreievePlayerStatSingleton()
+    {
+        GameObject common = GameObject.Find("common");
+        GameObject gameMode = GameObject.Find("!!!GAME_MODE_SELECTION");
+        playerStats = common.GetComponent<globalStats_player>();
+        mode = gameMode.GetComponent<globalStats_mode>();
     }
 
     void InitializePatrolRoute()

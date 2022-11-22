@@ -17,7 +17,7 @@ public class globalStats_player : Singleton<globalStats_player>
     public Text pointsNumber;
     public Text livesNumber;
     public Text currentHP;
-    public globalStats_mode gameMode;
+    private globalStats_mode selectedMode;
 
     /// <summary>
     /// Stores Default HP, Score Points and Lives.
@@ -29,7 +29,7 @@ public class globalStats_player : Singleton<globalStats_player>
     /// <summary>
     /// Sound effect related.
     /// </summary>
-    public soundManager SoundEffectStuff;
+    public soundManager sound;
 
 
     /// <summary>
@@ -51,6 +51,13 @@ public class globalStats_player : Singleton<globalStats_player>
     void Start()
     {
         stageNumber.text = "Stage 1";
+        fetchGameModeSingleton();
+    }
+
+    void fetchGameModeSingleton()
+    {
+        GameObject gameModeObject = GameObject.Find("!!!GAME_MODE_SELECTION");
+        selectedMode = gameModeObject.GetComponent<globalStats_mode>();
     }
 
     // Update is called once per frame
@@ -61,7 +68,11 @@ public class globalStats_player : Singleton<globalStats_player>
         currentHP.text = $"{HP}";
         if(HP <= 30)
         {
-            SoundEffectStuff.lowHPalarmPlayback();
+            sound.lowHPalarmPlayback();
+        }
+        if(HP > 30)
+        {
+            sound.lowHPalarmStop();
         }
     }
 

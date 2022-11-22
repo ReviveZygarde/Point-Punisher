@@ -15,9 +15,9 @@ public class globalStats_mode : Singleton<globalStats_player>
     /// GAMER_MODE = Hard difficulty. You start with 1 life left, but points increase drastically, Risk/reward type beat.
     /// FREE_PLAY = user selected a level from level select.
     /// </summary>
-    enum gameMode
+    public enum gameMode
     { NORMAL, GAMER_MODE, FREE_PLAY}
-    gameMode selectedMode = gameMode.NORMAL;
+    public gameMode selectedMode = gameMode.NORMAL;
 
 
     // Start is called before the first frame update

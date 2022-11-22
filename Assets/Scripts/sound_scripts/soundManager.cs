@@ -7,6 +7,7 @@ public class soundManager : MonoBehaviour
     public AudioSource shootSoundEffect;
     public AudioSource lowHPsoundLoop;
     public AudioSource getStar;
+    public AudioSource errorSound;
 
     public void shootSoundPlayback()
     {
@@ -23,12 +24,20 @@ public class soundManager : MonoBehaviour
 
     public void lowHPalarmStop()
     {
-        lowHPsoundLoop.Stop();
+        if (lowHPsoundLoop.isPlaying)
+        {
+            lowHPsoundLoop.Stop();
+        }
     }
 
     public void starSoundEffect()
     {
         getStar.Play();
+    }
+
+    public void errorPlay()
+    {
+        errorSound.Play();
     }
 
 
