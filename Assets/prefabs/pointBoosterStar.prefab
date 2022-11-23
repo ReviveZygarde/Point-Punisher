@@ -122,7 +122,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 169acc6bdf775604492b38c4182f6d83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerStats: {fileID: 0}
   PatrolRoute: {fileID: 0}
   Locations: []
 --- !u!114 &173386944610057373
@@ -150,7 +149,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 169acc6bdf775604492b38c4182f6d83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerStats: {fileID: 0}
   PatrolRoute: {fileID: 0}
   Locations: []
 --- !u!195 &8949627293555897564
@@ -204,3 +202,4 @@ MonoBehaviour:
   shootSoundEffect: {fileID: 0}
   lowHPsoundLoop: {fileID: 0}
   getStar: {fileID: 0}
+  errorSound: {fileID: 0}

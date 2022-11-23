@@ -13,7 +13,7 @@ public class globalStats_player : Singleton<globalStats_player>
     /// <summary>
     /// stageNumber, pointsNumber, and livesNumber are relating to the (old) UI.
     /// </summary>
-    public Text stageNumber;
+    public Text stageNumberForUI;
     public Text pointsNumber;
     public Text livesNumber;
     public Text currentHP;
@@ -22,6 +22,7 @@ public class globalStats_player : Singleton<globalStats_player>
     /// <summary>
     /// Stores Default HP, Score Points and Lives.
     /// </summary>
+    public string stageNumber;
     public int Points = 0;
     public int Lives = 5;
     public int HP = 100;
@@ -50,7 +51,8 @@ public class globalStats_player : Singleton<globalStats_player>
     // Start is called before the first frame update
     void Start()
     {
-        stageNumber.text = "Stage 1";
+        stageNumber = "Stage 1";
+        stageNumberForUI.text = stageNumber;
         fetchGameModeSingleton();
     }
 
@@ -86,7 +88,7 @@ public class globalStats_player : Singleton<globalStats_player>
         }
         else
         {
-            //SceneManager.LoadScene("gameOverScene"); to be added.............
+            SceneManager.LoadScene("gameOverScene");
         }
     }
 }

@@ -16,6 +16,7 @@ public class titleMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        userModeSelection.selectedMode = globalStats_mode.gameMode.NORMAL;
         sound = this.GetComponent<soundManager>();
         normalPlayStartButton.onClick.AddListener(startNormal);
         gamerModeStartButton.onClick.AddListener(startAsGamerMode);
@@ -25,7 +26,6 @@ public class titleMenu : MonoBehaviour
 
     public void startNormal()
     {
-        userModeSelection.selectedMode = globalStats_mode.gameMode.NORMAL;
         startStage1();
     }
 
