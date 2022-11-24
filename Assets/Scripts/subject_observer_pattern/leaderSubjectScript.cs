@@ -30,7 +30,10 @@ public class leaderSubjectScript : Subject
 
     private void Update()
     {
-        NotifyObservers();
+        if(enemyGroupTag != "No Enemy Group Assigned.")
+        {
+            NotifyObservers(); //This is in the Update rather than OnEnable because the movement of the followers will be choppy if this is called there.
+        }
     }
     
     private void OnEnable()
@@ -40,11 +43,19 @@ public class leaderSubjectScript : Subject
 
     private void enableAction()
     {
-        followerCapsulesArray = GameObject.FindGameObjectsWithTag(enemyGroupTag); //Find capsules that are in the scene already.
-        foreach (GameObject capsule in followerCapsulesArray) //Adds a Follower to the Enemies it found. Loops until its done with all the drones.
+        if (enemyGroupTag != string.Empty)
         {
-            Follower followerScript = capsule.AddComponent<Follower>();
-            Attach(followerScript);
+            followerCapsulesArray = GameObject.FindGameObjectsWithTag(enemyGroupTag); //Find capsules that are in the scene already.
+            foreach (GameObject capsule in followerCapsulesArray) //Adds a Follower to the Enemies it found. Loops until its done with all the drones.
+            {
+                Follower followerScript = capsule.AddComponent<Follower>();
+                Attach(followerScript);
+            }
+        }
+        else
+        {
+            enemyGroupTag = "No Enemy Group Assigned."; //If nothing is entered in the Inspector, a placeholder will be put in to prevent a Null exception.
+            Debug.Log($"{this.gameObject.name} does not have an enemy group assigned. There will be nothing following it. Make sure this was intentional.");
         }
     }
 
@@ -62,11 +73,12 @@ public class leaderSubjectScript : Subject
     }
 
 
-    
-
     private void OnDisable()
     {
-        disableAction();
+        if (enemyGroupTag != "No Enemy Group Assigned.")
+        {
+            disableAction();
+        }
     }
 
     private void disableAction()
@@ -77,4 +89,5 @@ public class leaderSubjectScript : Subject
             Detach(followerScript);
         }
     }
+    
 }

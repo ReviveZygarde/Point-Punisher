@@ -17,7 +17,6 @@ GameObject:
   - component: {fileID: 1844457741979284077}
   - component: {fileID: 8949627293555897564}
   - component: {fileID: -5642382713102013062}
-  - component: {fileID: 7490246574429516921}
   m_Layer: 0
   m_Name: pointBoosterStar
   m_TagString: Untagged
@@ -187,19 +186,3 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -5076798556035486163, guid: 7e0558378e899f14a9544a5a1f3c80f7, type: 3}
---- !u!114 &7490246574429516921
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8215030193495537106}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0be4e4bbaee44c4c9645a9aa8439427, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shootSoundEffect: {fileID: 0}
-  lowHPsoundLoop: {fileID: 0}
-  getStar: {fileID: 0}
-  errorSound: {fileID: 0}

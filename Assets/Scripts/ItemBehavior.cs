@@ -22,7 +22,6 @@ public class ItemBehavior : MonoBehaviour
     void Start()
     {
         _agent = GetComponent<NavMeshAgent>();
-        sound = GetComponent<soundManager>();
         InitializePatrolRoute();
         MoveToNextPatrolLocation();
         retreievePlayerStatSingleton();
@@ -33,6 +32,7 @@ public class ItemBehavior : MonoBehaviour
         GameObject common = GameObject.Find("common");
         GameObject gameMode = GameObject.Find("!!!GAME_MODE_SELECTION");
         playerStats = common.GetComponent<globalStats_player>();
+        sound = common.GetComponent<soundManager>();
         mode = gameMode.GetComponent<globalStats_mode>();
     }
 
@@ -74,8 +74,9 @@ public class ItemBehavior : MonoBehaviour
                 playerStats.HP = playerStats.HP + 5;
             }
             sound.starSoundEffect();
+            playerStats.starsCollected++;
             Destroy(this.transform.gameObject);
-            Debug.Log("Booster Item collected!");
+            Debug.Log("Star collected!");
         }
     }
 }

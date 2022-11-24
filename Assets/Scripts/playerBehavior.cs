@@ -19,7 +19,13 @@ public class playerBehavior : MonoBehaviour
     {
         _rb = GetComponent<Rigidbody>();
         _col = GetComponent<CapsuleCollider>();
-        soundPlaybackCuesheet = GetComponent<soundManager>();
+        fetchSoundPlaybackCuesheetFromSingleton();
+    }
+
+    void fetchSoundPlaybackCuesheetFromSingleton()
+    {
+        GameObject common = GameObject.Find("common");
+        soundPlaybackCuesheet = common.GetComponent<soundManager>();
     }
 
     // Update is called once per frame

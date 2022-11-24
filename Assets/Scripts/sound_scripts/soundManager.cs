@@ -1,3 +1,4 @@
+using Assets.Scripts;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,6 +9,7 @@ public class soundManager : MonoBehaviour
     public AudioSource lowHPsoundLoop;
     public AudioSource getStar;
     public AudioSource errorSound;
+    public AudioSource deathSound;
 
     public void shootSoundPlayback()
     {
@@ -28,6 +30,11 @@ public class soundManager : MonoBehaviour
         {
             lowHPsoundLoop.Stop();
         }
+    }
+
+    public void deathSoundPlay()
+    {
+        deathSound.Play();
     }
 
     public void starSoundEffect()

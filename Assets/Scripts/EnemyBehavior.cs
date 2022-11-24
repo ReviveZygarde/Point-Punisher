@@ -12,7 +12,7 @@ public class EnemyBehavior : MonoBehaviour
     //public GameBehavior gameManager;
     private globalStats_player playerStats;
     private globalStats_mode mode;
-    private int _lives = 1;
+    public int enemyHP = 1; //The variable name was a bit misleading. Changed it from "_lives" -> "enemyHP". I also made it public so i can make bosses
     //public GameObject nextEnemy;
     //private leaderSubjectScript something;
 
@@ -40,11 +40,11 @@ void Start()
 
     public int EnemyLives
     {
-        get { return _lives; }
+        get { return enemyHP; }
         private set
         {
-            _lives = value;
-            if (_lives <= 0)
+            enemyHP = value;
+            if (enemyHP <= 0)
             {
                 playerStats.Points = playerStats.Points + 10;
                 //Destroy(this.gameObject);
@@ -125,6 +125,12 @@ void Start()
         {
             playerStats.HP -= 10;
             Debug.Log("Critical hit");
+        }
+        if(collision.gameObject.name == "leftInvisibleWall" || collision.gameObject.name == "rightInvisibleWall" || collision.gameObject.name == "wallPusher")
+        {
+            Physics.IgnoreCollision(collision.gameObject.GetComponent<Collider>(), this.GetComponent<Collider>());
+            //Since im using a rigidbody to prevent capsules from fusing together, this code tells the enemies to
+            //ignore the left and right invisible walls, and wallPusher
         }
     }
 

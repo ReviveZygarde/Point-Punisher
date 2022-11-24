@@ -34,6 +34,8 @@ public class gameOverMenu : MonoBehaviour
     {
         GameObject common = GameObject.Find("common");
         Destroy(common);
+        GameObject modeGO = GameObject.Find("!!!GAME_MODE_SELECTION");
+        Destroy(modeGO);
         //When going back to the title screen, the "common" gameObject that carries the Singleton gets destroyed. (but gets reinstantiated when going to a stage)
         SceneManager.LoadScene("titleScreen");
     }

@@ -26,6 +26,7 @@ public class titleMenu : MonoBehaviour
 
     public void startNormal()
     {
+        userModeSelection.selectedMode = globalStats_mode.gameMode.NORMAL;
         startStage1();
     }
 
@@ -43,7 +44,8 @@ public class titleMenu : MonoBehaviour
 
     public void goToStageSelectMenu()
     {
-        //SceneManager.LoadScene("stage_select");
+        userModeSelection.selectedMode = globalStats_mode.gameMode.FREE_PLAY;
+        //SceneManager.LoadScene("stageSelect");
         sound.errorPlay();
         Debug.Log("Not implemented yet.");
     }

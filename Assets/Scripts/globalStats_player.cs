@@ -18,14 +18,19 @@ public class globalStats_player : Singleton<globalStats_player>
     public Text livesNumber;
     public Text currentHP;
     private globalStats_mode selectedMode;
+    public GameObject blackScreenForDeath;
+
+    //UI buttons for testing purposes
+    public Button forceRestartStage;
 
     /// <summary>
     /// Stores Default HP, Score Points and Lives.
     /// </summary>
-    public string stageNumber;
+    public string stageNumber = "Stage 1";
     public int Points = 0;
     public int Lives = 5;
     public int HP = 100;
+    public int starsCollected = 0;
 
     /// <summary>
     /// Sound effect related.
@@ -47,11 +52,13 @@ public class globalStats_player : Singleton<globalStats_player>
     { NO_EVENT_HAPPENING, ADD_LIFE, PLAYER_DEAD, LEVEL_COMPLETED}
     playerGameplayStatus importantEvent = playerGameplayStatus.NO_EVENT_HAPPENING;
 
-
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        stageNumber = "Stage 1";
+        forceRestartStage.onClick.AddListener(restartStageAfterDeath);
+    }
+
+    private void OnEnable()
+    {
         stageNumberForUI.text = stageNumber;
         fetchGameModeSingleton();
     }
@@ -80,10 +87,12 @@ public class globalStats_player : Singleton<globalStats_player>
 
     void restartStageAfterDeath() //After the player's HP reaches 0, restart scene and bring the HP back up to 100.
     {
-        if(Lives >= 0)
+        if(Lives > 0)
         {
+            sound.deathSoundPlay();
             Lives = Lives - 1;
             HP = 100;
+            starsCollected = 0;
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
         else
