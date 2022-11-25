@@ -12,6 +12,7 @@ TagManager:
   - globalPlayerStats
   - ene_gr3
   - ene_gr4
+  - ene_gr5
   layers:
   - Default
   - TransparentFX

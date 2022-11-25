@@ -45,9 +45,7 @@ public class titleMenu : MonoBehaviour
     public void goToStageSelectMenu()
     {
         userModeSelection.selectedMode = globalStats_mode.gameMode.FREE_PLAY;
-        //SceneManager.LoadScene("stageSelect");
-        sound.errorPlay();
-        Debug.Log("Not implemented yet.");
+        SceneManager.LoadScene("stageSelect");
     }
 
     public void goToHow2playScreen()
