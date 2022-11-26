@@ -10,6 +10,7 @@ public class soundManager : MonoBehaviour
     public AudioSource getStar;
     public AudioSource errorSound;
     public AudioSource deathSound;
+    public AudioSource ding;
 
     public void shootSoundPlayback()
     {
@@ -45,6 +46,11 @@ public class soundManager : MonoBehaviour
     public void errorPlay()
     {
         errorSound.Play();
+    }
+
+    public void dingPlay()
+    {
+        ding.Play();
     }
 
 

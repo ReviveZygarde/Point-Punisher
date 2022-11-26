@@ -68,7 +68,7 @@ public class ItemBehavior : MonoBehaviour
             //while this script CALLS the event (and then destroys the star item).
             //Extra: depending on the gameMode state, maybe I can increase the Score multiplier.
 
-            playerStats.Points = playerStats.Points * 5;
+            // playerStats.Points = playerStats.Points * 5;
             if (playerStats.HP < 100)
             {
                 playerStats.HP = playerStats.HP + 5;

@@ -1018,13 +1018,14 @@ GameObject:
   m_Component:
   - component: {fileID: 728498660}
   - component: {fileID: 728498659}
+  - component: {fileID: 728498661}
   m_Layer: 0
   m_Name: BGM
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!82 &728498659
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1035,7 +1036,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: c27c123887a6856468e35eed9581c82c, type: 3}
+  m_audioClip: {fileID: 8300000, guid: a83ae6f871a307d429415353061a3b9f, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -1136,6 +1137,29 @@ Transform:
   m_Father: {fileID: 10968032}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!164 &728498661
+AudioReverbFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 728498658}
+  m_Enabled: 1
+  m_DryLevel: 0
+  m_Room: -1000
+  m_RoomHF: -476
+  m_DecayTime: 4.32
+  m_DecayHFRatio: 0.59
+  m_ReflectionsLevel: -789
+  m_ReverbLevel: -289
+  m_ReverbDelay: 0.03
+  m_Diffusion: 100
+  m_Density: 100
+  m_HFReference: 5000
+  m_RoomLF: 0
+  m_LFReference: 250
+  m_ReflectionsDelay: 0
+  m_ReverbPreset: 7
 --- !u!1 &849154819
 GameObject:
   m_ObjectHideFlags: 0
@@ -1202,6 +1226,8 @@ MonoBehaviour:
   lowHPsoundLoop: {fileID: 0}
   getStar: {fileID: 0}
   errorSound: {fileID: 1452596865}
+  deathSound: {fileID: 0}
+  ding: {fileID: 0}
 --- !u!1 &1026498062
 GameObject:
   m_ObjectHideFlags: 0

@@ -44,4 +44,5 @@ public class Follower : Observer
             Destroy(this.gameObject);
         }
     }
+
 }

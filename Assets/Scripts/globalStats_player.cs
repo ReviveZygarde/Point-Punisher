@@ -22,6 +22,7 @@ public class globalStats_player : Singleton<globalStats_player>
 
     //UI buttons for testing purposes
     public Button forceRestartStage;
+    public Button skipToStageClear;
 
     /// <summary>
     /// Stores Default HP, Score Points and Lives.
@@ -52,9 +53,15 @@ public class globalStats_player : Singleton<globalStats_player>
     { NO_EVENT_HAPPENING, ADD_LIFE, PLAYER_DEAD, LEVEL_COMPLETED}
     playerGameplayStatus importantEvent = playerGameplayStatus.NO_EVENT_HAPPENING;
 
+    public enum currentStage
+    { STAGE1, STAGE2, STAGE3, STAGE4, NONE} // NONE is for Level Select.
+    public currentStage stageState = currentStage.STAGE1;
+
+
     private void Start()
     {
         forceRestartStage.onClick.AddListener(restartStageAfterDeath);
+        skipToStageClear.onClick.AddListener(toStageClearScreen);
     }
 
     private void OnEnable()
@@ -83,6 +90,10 @@ public class globalStats_player : Singleton<globalStats_player>
         {
             sound.lowHPalarmStop();
         }
+        if(HP <= 0)
+        {
+            restartStageAfterDeath();
+        }
     }
 
     void restartStageAfterDeath() //After the player's HP reaches 0, restart scene and bring the HP back up to 100.
@@ -100,4 +111,11 @@ public class globalStats_player : Singleton<globalStats_player>
             SceneManager.LoadScene("gameOverScene");
         }
     }
+
+    public void toStageClearScreen()
+    {
+        HP = 100;
+        SceneManager.LoadScene("stage1results");
+    }
+
 }

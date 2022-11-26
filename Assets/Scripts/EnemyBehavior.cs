@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -12,6 +13,7 @@ public class EnemyBehavior : MonoBehaviour
     //public GameBehavior gameManager;
     private globalStats_player playerStats;
     private globalStats_mode mode;
+    public bool bossEntity;
     public int enemyHP = 1; //The variable name was a bit misleading. Changed it from "_lives" -> "enemyHP". I also made it public so i can make bosses
     //public GameObject nextEnemy;
     //private leaderSubjectScript something;
@@ -58,6 +60,10 @@ void Start()
     {
         GetComponent<MeshRenderer>().enabled = false;
         GetComponent<CapsuleCollider>().enabled = false;
+        if(bossEntity == true)
+        {
+            playerStats.toStageClearScreen();
+        }
         //Destroy(GetComponent<CapsuleCollider>());
         //Destroy(GetComponent<MeshRenderer>());
         //something.removeFollowers();
@@ -90,6 +96,10 @@ void Start()
         if (Locations.Count == 0)
         {
             return;
+        }
+        if(_locationIndex == Locations.Count)
+        {
+            this.transform.position = Locations[0].position;
         }
         _agent.destination = Locations[_locationIndex].position;
         _locationIndex = (_locationIndex + 1) % Locations.Count;
