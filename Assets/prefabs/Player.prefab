@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 2018564163071954236}
   - component: {fileID: 2018564163071954237}
   - component: {fileID: 2018564163071954238}
-  - component: {fileID: 2018564163071954239}
   - component: {fileID: 2018564163071954234}
   - component: {fileID: 2018564163071954232}
+  - component: {fileID: 5888263902631368298}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 2018564163071954208}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.18, y: -0.01, z: -1.82}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.36476895, y: 0.36476895, z: 0.36476895}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -43,7 +43,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2018564163071954208}
-  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 4300000, guid: 4651573b3da988144a8da84eae4d9fd5, type: 3}
 --- !u!23 &2018564163071954238
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -86,20 +86,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &2018564163071954239
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2018564163071954208}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &2018564163071954234
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -109,8 +95,8 @@ Rigidbody:
   m_GameObject: {fileID: 2018564163071954208}
   serializedVersion: 2
   m_Mass: 100
-  m_Drag: 0
-  m_AngularDrag: 0.05
+  m_Drag: 100
+  m_AngularDrag: 100
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -131,3 +117,17 @@ MonoBehaviour:
   MoveSpeed: 10
   Bullet: {fileID: 8088711403210526612, guid: eadba3fe374fa9348b2990a0c533a276, type: 3}
   BulletSpeed: 100
+--- !u!136 &5888263902631368298
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2018564163071954208}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 2.5418818
+  m_Height: 0.91265976
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}

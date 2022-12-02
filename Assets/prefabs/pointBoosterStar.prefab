@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &5731118472943378466
+--- !u!1 &7949944590515802322
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,8 +8,8 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6871675032223720134}
-  - component: {fileID: 4340351023906117847}
+  - component: {fileID: 1939232237916034940}
+  - component: {fileID: 6078104397449913574}
   m_Layer: 0
   m_Name: Trail
   m_TagString: Untagged
@@ -17,29 +17,29 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6871675032223720134
+--- !u!4 &1939232237916034940
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5731118472943378466}
-  m_LocalRotation: {x: -0.974636, y: 0, z: -0, w: 0.22379616}
+  m_GameObject: {fileID: 7949944590515802322}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.18885948, y: 0.18885948, z: 0.18885948}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8739928606972096360}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!96 &4340351023906117847
+--- !u!96 &6078104397449913574
 TrailRenderer:
   serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5731118472943378466}
+  m_GameObject: {fileID: 7949944590515802322}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -83,7 +83,7 @@ TrailRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 1
+        value: 0.28750038
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -95,8 +95,8 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 1, g: 0.9603756, b: 0.25943398, a: 1}
-      key1: {r: 1, g: 1, b: 1, a: 1}
+      key0: {r: 1, g: 0.99581075, b: 0.7688679, a: 1}
+      key1: {r: 0.9980091, g: 1, b: 0.7971698, a: 0}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -112,7 +112,7 @@ TrailRenderer:
       ctime6: 0
       ctime7: 0
       atime0: 0
-      atime1: 65535
+      atime1: 17540
       atime2: 0
       atime3: 0
       atime4: 0
@@ -129,7 +129,7 @@ TrailRenderer:
     shadowBias: 0.5
     generateLightingData: 0
   m_MinVertexDistance: 0.1
-  m_Autodestruct: 0
+  m_Autodestruct: 1
   m_Emitting: 1
 --- !u!1 &8215030193495537106
 GameObject:
@@ -166,7 +166,7 @@ Transform:
   m_LocalScale: {x: 5.294942, y: 5.294941, z: 5.294941}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 6871675032223720134}
+  - {fileID: 1939232237916034940}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 154.136, y: 0, z: 0}

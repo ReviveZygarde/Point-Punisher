@@ -12,6 +12,7 @@ public class resultsScript : MonoBehaviour
     private GameObject common;
     public int multiplerForGamerMode = 1;
     private int scoreAfterCalculation = 0;
+    public Text currentStage_UI;
     public Text score;
     public Text starsCollected;
     public Text scoreMultiplier;

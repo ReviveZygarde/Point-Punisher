@@ -79,6 +79,7 @@ public class globalStats_player : Singleton<globalStats_player>
     // Update is called once per frame
     void Update()
     {
+        stageNumberForUI.text = $"{stageNumber}";
         pointsNumber.text = $"{Points}";
         livesNumber.text = $"{Lives}";
         currentHP.text = $"{HP}";

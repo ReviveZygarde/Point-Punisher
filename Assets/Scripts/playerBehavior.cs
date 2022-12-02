@@ -20,7 +20,6 @@ public class playerBehavior : MonoBehaviour
         _rb = GetComponent<Rigidbody>();
         _col = GetComponent<CapsuleCollider>();
         fetchSoundPlaybackCuesheetFromSingleton();
-        StartCoroutine(RuleOutRigidbody());
     }
 
     void fetchSoundPlaybackCuesheetFromSingleton()
@@ -40,12 +39,6 @@ public class playerBehavior : MonoBehaviour
             ShootBullet();
             soundPlaybackCuesheet.shootSoundPlayback();
         };
-    }
-
-    IEnumerator RuleOutRigidbody()
-    {
-        this.transform.Translate(0, 0, -0.003f);
-        yield return new WaitForSeconds(0.2f);
     }
 
 
