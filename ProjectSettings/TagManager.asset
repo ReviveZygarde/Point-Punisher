@@ -17,6 +17,8 @@ TagManager:
   - ene_gr9
   - ene_gr10
   - ene_gr11
+  - ene_gr6
+  - ene_gr8
   layers:
   - Default
   - TransparentFX

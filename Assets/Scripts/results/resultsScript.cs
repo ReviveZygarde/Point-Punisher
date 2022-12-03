@@ -132,7 +132,7 @@ public class resultsScript : MonoBehaviour
     {
         playerStat.stageState = globalStats_player.currentStage.NONE;
         playerStat.stageNumber = "";
-        SceneManager.LoadScene("endingScene");
+        SceneManager.LoadScene("ending");
     }
 
 
