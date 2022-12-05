@@ -27,31 +27,35 @@ public class stageSelectScript : MonoBehaviour
         stage3button.onClick.AddListener(stage3start);
         stage4button.onClick.AddListener(stage4start);
     }
-
     void SetStageStagetoNONE()
     {
         stats = common.GetComponent<globalStats_player>();
         stats.stageState = globalStats_player.currentStage.NONE;
+        stats.stageNumber = "---";
     }
 
     void stage1start()
     {
-
+        SceneManager.LoadScene("stage1_freeplay");
+        stats.stageNumber = "Stage 1\n(Free Play)";
     }
 
     void stage2start()
     {
-
+        SceneManager.LoadScene("stage2");
+        stats.stageNumber = "Stage 2\n(Free Play)";
     }
 
     void stage3start()
     {
-
+        SceneManager.LoadScene("stage3");
+        stats.stageNumber = "Stage 3\n(Free Play)";
     }
 
     void stage4start()
     {
-
+        SceneManager.LoadScene("stage4");
+        stats.stageNumber = "Stage 4\n(Free Play)";
     }
 
     void toTitle()

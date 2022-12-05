@@ -60,8 +60,11 @@ public class globalStats_player : Singleton<globalStats_player>
 
     private void Start()
     {
-        forceRestartStage.onClick.AddListener(restartStageAfterDeath);
-        skipToStageClear.onClick.AddListener(toStageClearScreen);
+        if(selectedMode.selectedMode != globalStats_mode.gameMode.FREE_PLAY)
+        {
+            forceRestartStage.onClick.AddListener(restartStageAfterDeath);
+            skipToStageClear.onClick.AddListener(toStageClearScreen);
+        }
     }
 
     private void OnEnable()

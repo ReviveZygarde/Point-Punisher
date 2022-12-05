@@ -2,18 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class wallPusherScript : MonoBehaviour
+public class lightRotation : MonoBehaviour
 {
-
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        this.transform.Translate(0, 0, 0.003f);
+        transform.Rotate(0.005f, 0, 0);
     }
 }

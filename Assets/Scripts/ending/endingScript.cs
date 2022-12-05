@@ -39,9 +39,7 @@ public class endingScript : MonoBehaviour
         yield return new WaitForSeconds(4f);
         text.text = "Low-poly Spaceships Asset\nby Astronaut";
         yield return new WaitForSeconds(4f);
-        text.text = $"BGM:\nStage music from Star Fox Assault\nEnding theme:\nç∞ÇÃrefrain (N64 cover) from\nNeon Genesis Evangelion";
-        yield return new WaitForSeconds(7f);
-        text.text = $"Title and Stage Select:\nYu-Gi-Oh! Forbidden Memories";
+        text.text = $"BGM:\nStage music from Star Fox Assault\nTitle and Stage Select:\nYu-Gi-Oh! Forbidden Memories";
         yield return new WaitForSeconds(7f);
         text.text = $"Stage clear jingle:\nSonic CD";
         yield return new WaitForSeconds(7f);

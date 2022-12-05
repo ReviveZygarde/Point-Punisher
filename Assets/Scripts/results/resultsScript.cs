@@ -145,6 +145,10 @@ public class resultsScript : MonoBehaviour
         starsCollected.text = $"{playerStat.starsCollected}";
         playerStat.sound.dingPlay();
         yield return new WaitForSeconds(1);
+        if (playerStat.starsCollected == 0)
+        {
+            playerStat.starsCollected++;
+        }
         scoreMultiplier.text = $"{playerStat.Points} Å~ {playerStat.starsCollected} Å~ {multiplerForGamerMode}";
         playerStat.sound.dingPlay();
         yield return new WaitForSeconds(3);

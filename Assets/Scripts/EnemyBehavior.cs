@@ -48,7 +48,14 @@ void Start()
             enemyHP = value;
             if (enemyHP <= 0)
             {
-                playerStats.Points = playerStats.Points + 10;
+                if (mode.selectedMode == globalStats_mode.gameMode.GAMER_MODE)
+                {
+                    playerStats.Points = playerStats.Points + 30;
+                }
+                else
+                {
+                    playerStats.Points = playerStats.Points + 10;
+                }
                 //Destroy(this.gameObject);
                 FakeDestroy();
                 Debug.Log("Enemy down");
@@ -134,6 +141,10 @@ void Start()
         if (collision.gameObject.name == "Player")
         {
             playerStats.HP -= 10;
+            if (mode.selectedMode == globalStats_mode.gameMode.GAMER_MODE) //decreases an additional 10 HP if gamer mode is on
+            {
+                playerStats.HP -= 10;
+            }
             Debug.Log("Critical hit");
         }
         if(collision.gameObject.name == "leftInvisibleWall" || collision.gameObject.name == "rightInvisibleWall" || collision.gameObject.name == "wallPusher")
