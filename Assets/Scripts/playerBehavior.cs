@@ -11,6 +11,7 @@ public class playerBehavior : MonoBehaviour
     private CapsuleCollider _col;
     private soundManager soundPlaybackCuesheet;
     public GameObject Bullet;
+    private ObjectPoolScript OBJpoolManager;
     public float BulletSpeed = 100f;
     private bool _isShooting;
     //private GameBehavior _gameManager;
@@ -20,12 +21,19 @@ public class playerBehavior : MonoBehaviour
         _rb = GetComponent<Rigidbody>();
         _col = GetComponent<CapsuleCollider>();
         fetchSoundPlaybackCuesheetFromSingleton();
+        getPoolManagerForBullets();
     }
 
     void fetchSoundPlaybackCuesheetFromSingleton()
     {
         GameObject common = GameObject.Find("common");
         soundPlaybackCuesheet = common.GetComponent<soundManager>();
+    }
+
+    void getPoolManagerForBullets()
+    {
+        GameObject temp = GameObject.Find("OBJECT_POOL_MANAGER");
+        OBJpoolManager = temp.GetComponent<ObjectPoolScript>();
     }
 
     // Update is called once per frame
@@ -49,8 +57,6 @@ public class playerBehavior : MonoBehaviour
 
     void ShootBullet()
     {
-            GameObject newBullet = Instantiate(Bullet, this.transform.position + new Vector3(0, 0, 1), this.transform.rotation);
-            Rigidbody BulletRB = newBullet.GetComponent<Rigidbody>();
-            BulletRB.velocity = this.transform.forward * BulletSpeed;
+        OBJpoolManager.spawn();
     }
 }

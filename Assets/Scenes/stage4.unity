@@ -14718,6 +14718,75 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!1001 &385503463
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1381664608744085381, guid: 0db0cad1a9b6a734580772f28b2007d3, type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1381664608744085381, guid: 0db0cad1a9b6a734580772f28b2007d3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -6.329597
+      objectReference: {fileID: 0}
+    - target: {fileID: 1381664608744085381, guid: 0db0cad1a9b6a734580772f28b2007d3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.22578607
+      objectReference: {fileID: 0}
+    - target: {fileID: 1381664608744085381, guid: 0db0cad1a9b6a734580772f28b2007d3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -15.656892
+      objectReference: {fileID: 0}
+    - target: {fileID: 1381664608744085381, guid: 0db0cad1a9b6a734580772f28b2007d3, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1381664608744085381, guid: 0db0cad1a9b6a734580772f28b2007d3, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1381664608744085381, guid: 0db0cad1a9b6a734580772f28b2007d3, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1381664608744085381, guid: 0db0cad1a9b6a734580772f28b2007d3, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1381664608744085381, guid: 0db0cad1a9b6a734580772f28b2007d3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1381664608744085381, guid: 0db0cad1a9b6a734580772f28b2007d3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1381664608744085381, guid: 0db0cad1a9b6a734580772f28b2007d3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1381664608744085498, guid: 0db0cad1a9b6a734580772f28b2007d3, type: 3}
+      propertyPath: maxPoolSize
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1381664608744085498, guid: 0db0cad1a9b6a734580772f28b2007d3, type: 3}
+      propertyPath: bulletPrefab
+      value: 
+      objectReference: {fileID: 8088711403210526612, guid: eadba3fe374fa9348b2990a0c533a276, type: 3}
+    - target: {fileID: 1381664608744085498, guid: 0db0cad1a9b6a734580772f28b2007d3, type: 3}
+      propertyPath: stackDefaultCapacity
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1381664608744085499, guid: 0db0cad1a9b6a734580772f28b2007d3, type: 3}
+      propertyPath: m_Name
+      value: OBJECT_POOL_MANAGER
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0db0cad1a9b6a734580772f28b2007d3, type: 3}
 --- !u!1 &408335878
 GameObject:
   m_ObjectHideFlags: 0

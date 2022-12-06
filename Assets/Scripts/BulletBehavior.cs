@@ -1,19 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Pool;
 
 public class BulletBehavior : MonoBehaviour
 {
     public float OnscreenDelay = 0.5f;
-    // Start is called before the first frame update
-    void Start()
+    public ObjectPoolScript poolManager;
+
+    public IObjectPool<BulletBehavior> Pool { get; internal set; }
+
+    public void returnToPool()
     {
-        Destroy(this.gameObject, OnscreenDelay);
+        Pool.Release(this);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

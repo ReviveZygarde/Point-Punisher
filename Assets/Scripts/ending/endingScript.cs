@@ -35,7 +35,7 @@ public class endingScript : MonoBehaviour
         yield return new WaitForSeconds(5f);
         text.text = "Point Punisher!! credits";
         yield return new WaitForSeconds(4f);
-        text.text = "C# Program:\nAndrew Peterson";
+        text.text = "C# Program:\nAndrew-P";
         yield return new WaitForSeconds(4f);
         text.text = "Low-poly Spaceships Asset\nby Astronaut";
         yield return new WaitForSeconds(4f);

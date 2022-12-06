@@ -146,13 +146,19 @@ void Start()
                 playerStats.HP -= 10;
             }
             Debug.Log("Critical hit");
+            IgnoreCollisionDetection(collision);
         }
         if(collision.gameObject.name == "leftInvisibleWall" || collision.gameObject.name == "rightInvisibleWall" || collision.gameObject.name == "wallPusher")
         {
-            Physics.IgnoreCollision(collision.gameObject.GetComponent<Collider>(), this.GetComponent<Collider>());
+            IgnoreCollisionDetection(collision);
             //Since im using a rigidbody to prevent capsules from fusing together, this code tells the enemies to
             //ignore the left and right invisible walls, and wallPusher
         }
+    }
+
+    void IgnoreCollisionDetection(Collision collision)
+    {
+        Physics.IgnoreCollision(collision.gameObject.GetComponent<Collider>(), this.GetComponent<Collider>());
     }
 
 }
