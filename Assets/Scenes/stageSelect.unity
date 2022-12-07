@@ -407,6 +407,10 @@ MonoBehaviour:
   stage3button: {fileID: 1576596161}
   stage4button: {fileID: 33979100}
   back: {fileID: 1530827132}
+  addLife: {fileID: 1667913602}
+  removeLife: {fileID: 1215383724}
+  addHP: {fileID: 665938234}
+  removeHP: {fileID: 1938448238}
 --- !u!4 &141503734
 Transform:
   m_ObjectHideFlags: 0

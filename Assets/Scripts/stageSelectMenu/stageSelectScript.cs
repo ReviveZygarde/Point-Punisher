@@ -11,6 +11,10 @@ public class stageSelectScript : MonoBehaviour
     public Button stage3button;
     public Button stage4button;
     public Button back;
+    public Button addLife;
+    public Button removeLife;
+    public Button addHP;
+    public Button removeHP;
     private GameObject common;
     private GameObject mode;
     private globalStats_player stats;
@@ -26,7 +30,12 @@ public class stageSelectScript : MonoBehaviour
         stage2button.onClick.AddListener(stage2start);
         stage3button.onClick.AddListener(stage3start);
         stage4button.onClick.AddListener(stage4start);
+        addLife.onClick.AddListener(plusLife);
+        removeLife.onClick.AddListener(minusLife);
+        addHP.onClick.AddListener(plusHP);
+        removeHP.onClick.AddListener(minusHP);
     }
+
     void SetStageStagetoNONE()
     {
         stats = common.GetComponent<globalStats_player>();
@@ -63,6 +72,44 @@ public class stageSelectScript : MonoBehaviour
         Destroy(common);
         Destroy(mode);
         SceneManager.LoadScene("titleScreen");
+    }
+
+    //-----------------------------------------
+
+    void plusLife()
+    {
+        if (stats.Lives < 5)
+        {
+            stats.sound.starSoundEffect();
+            stats.Lives++;
+        }
+    }
+
+    void minusLife()
+    {
+        if (stats.Lives > 0)
+        {
+            stats.sound.starSoundEffect();
+            stats.Lives--;
+        }
+    }
+
+    void plusHP()
+    {
+        if (stats.HP < 100)
+        {
+            stats.sound.starSoundEffect();
+            stats.HP = stats.HP + 10;
+        }
+    }
+
+    void minusHP()
+    {
+        if (stats.HP >= 60)
+        {
+            stats.sound.starSoundEffect();
+            stats.HP = stats.HP - 10;
+        }
     }
 
 }
